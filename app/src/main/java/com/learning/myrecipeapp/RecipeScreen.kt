@@ -44,46 +44,7 @@ fun RecipeScreen(modifier: Modifier = Modifier) {
         }
     }
 
-    // How each Item look like
-    @Composable
-    fun CategoryItem(category: Category) {
-        Column(modifier = Modifier
-            .padding(8.dp)
-            .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally) {
 
-            Image(
-                painter = rememberAsyncImagePainter(category.strCategoryThumb),
-                contentDescription =null,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .aspectRatio(1f)
-            )
-
-
-
-
-
-            Text(
-                text = category.strCategory,
-                color = Color.Black,
-                style = TextStyle(fontWeight = FontWeight.Bold),
-                modifier = Modifier.padding(top = 4.dp)
-            )
-        }
-
-    }
-
-    @Composable
-fun CategoryScreen(categories : List<Category>){
-    LazyVerticalGrid(GridCells.Fixed(2),modifier= Modifier.fillMaxSize()) {
-        items(categories) {
-            category ->
-            CategoryItem(category = category)
-
-        }
-    }
-}
 
 
 }
